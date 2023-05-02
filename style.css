@@ -24,15 +24,20 @@ html, body, *{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    width: 250px;
     height: 30px;
     background-color: #1a5276 ;
     color: white;
-    padding: 0px 20px 0px 20px;
+    padding: 5px 20px 5px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 12.5pt;
+}
 
+.nav-bar-right:hover{
+    color: #1a5276;
+    background-color: white;
+    border: 1px solid #1a5276;
 }
 
 .nav-bar-left a{
@@ -307,6 +312,28 @@ html, body, *{
     width: 100%;
 }
 
+.about-tel-btn-cv{
+    display: none;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-tel-btn-cv a{
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+}
+
+.about-tel-btn-cv a:hover{
+    background-color: #212f3c;
+    border: 1px solid white;
+    color: white;
+}
+
 .competences{
     width: calc(100% - 160px);
     padding: 80px;
@@ -529,6 +556,10 @@ html, body, *{
 
     .about-left, .about-right{
         width: 100%;
+    }
+
+    .about-tel-btn-cv{
+        display: block;
     }
 
     .competences-content{
