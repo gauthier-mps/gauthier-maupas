@@ -468,6 +468,10 @@ html, body, *{
     width: 100%;
 }
 
+.projet-text p {
+    margin-top: 6px;
+}
+
 .contact{
     width: calc(100% - 160px);
     padding: 80px;
