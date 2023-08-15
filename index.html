@@ -1,240 +1,505 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Gauthier Maupas</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous">
-    </script>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
-</head>
-<body>
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Gauthier Maupas</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="css/custom.css">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    </head>
+    <body>
 
-    <div class="btn-back" id="btn-back">
-        <i class="fas fa-angle-up"></i>
-    </div>
-
-    <div class="content-btn-sidebar">
-        <button class="btn-sidebar" type="button" id="btn-sidebar" onclick="toggleSidebar()">
-            <div class="hamburger"></div>
+        <button type="button" class="btn btn-floating btn-lg" id="btn-back-to-top">
+            <i class="fas fa-arrow-up"></i>
         </button>
-    </div>
-    <nav class="nav-tel" id="nav-tel">
-        <div class="nav-tel-content">
-            <div class="nav-tel-top">
-                <a href="#about" onclick="closeSidebar()">À PROPOS</a>
-                <!-- <a href="#">FORMATIONS</a> -->
-                <a href="#competences" onclick="closeSidebar()">COMPÉTENCES</a>
-                <a href="#projets" onclick="closeSidebar()">PROJETS</a>
-                <!-- <a href="#">EXPÉRIENCES</a> -->
-                <a href="#contact" onclick="closeSidebar()">CONTACT</a>
+
+        <nav class="navbar navbar-expand-lg border-bottom shadow-custom position-fixed w-100 bg-white z-3">
+            <div class="container-fluid">
+                <div class="d-flex flex-grow-1 flex-lg-grow-0 col-lg-2 justify-content-center">
+                    <a class="navbar-brand font-custom-brand" href="index.html">Gauthier Maupas</a>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>              
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link me-3" href="#competences">Compétences</a>
+                        <a class="nav-link me-3" href="#" style="display: none;">Expériences</a>
+                        <a class="nav-link me-3" href="#freelance">Freelance</a>
+                        <a class="nav-link me-3" href="#projects">Portfolio</a>
+                        <a class="nav-link me-3" href="#contact">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid d-flex align-items-center justify-content-center flex-column">
+            <div class="container-fluid d-flex flex-column flex-lg-row flex-xl-row flex-xxl-row justify-content-center align-items-center pe-lg-5 pe-xl-5 pe-xxl-5 container-banner">
+                <div class="container-fluid d-flex flex-column justify-content-center align-items-center col-lg-5 col-xl-5 col-xxl-5">
+                    <img src="img/gauthier.jpg" alt="Photo de Gauthier Maupas" class="rounded-circle img-fluid col-7 mb-3 photo-circle">
+                    <h1 class="mb-2">Gauthier Maupas</h1>
+                    <div class="h-separator mb-3"></div>
+                    <h5>
+                        <p class="typewrite" data-period="3000" data-type='[ "Étudiant à EPITA", "Développeur freelance"]'>
+                            <span class="wrap"></span>
+                        </p>
+                    </h5>    
+                </div>
+
+                <div class="container col-lg-5" data-aos="fade-in" data-aos-duration = "800">
+                    <h2>À propos</h2>
+                    <div class="h-separator mb-4" style="height: 1px; width: 50px;"></div>
+                    <p style="text-align: justify;">     Bonjour ! Je m'appelle Gauthier Maupas, j'ai 21 ans et je suis passionné par l'informatique. Je suis actuellement étudiant en école d'ingénieur en informatique à l'EPITA, où j'approfondis mes compétences et ma compréhension du numérique.</p>
+                    <p style="text-align: justify;">     Grâce à mes études et à ma passion, je suis devenu un développeur compétent et polyvalent, je suis capable de transformer des idées en un résultat concret. En parallèle de mes études, je me suis donc lancé en tant que développeur freelance. Si vous avez un projet et si mes compétences décrites ci-dessous vous intéressent, n'hésitez pas à me contacter !</p>
+                    <div class="d-flex align-items-center justify-content-center mt-5">
+                        <button type="button" class="btn btn-primary mt-2" onclick="location.href='#contact'">Contactez moi !</button>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid d-flex justify-content-center bottom-0 position-absolute z-0">
+                <a href="#competences" class="angle-down bounce-animation"><i class="fa-solid fa-angle-down"></i></a>
             </div>
         </div>
-    </nav>
 
-    <nav class="nav-bar">
-        <div class="nav-bar-left">
-            <a href="#about">À PROPOS</a>
-            <!-- <a href="#">FORMATIONS</a> -->
-            <a href="#competences">COMPÉTENCES</a>
-            <a href="#projets">PROJETS</a>
-            <!-- <a href="#">EXPÉRIENCES</a> -->
-            <a href="#contact">CONTACT</a>
-        </div>
-        <a class="nav-bar-right" href="pdf/gauthier-maupas-CV.pdf" target="_blank" download>Télécharger mon CV<i class="fa-solid fa-download"></i></a>
-    </nav>
-    <div class="banner">
-        <div class="banner-center">
-            <div class="banner-img"></div>
-            <h1>Gauthier Maupas</h1>
-            <h4>Étudiant à EPITA</h4>
-        </div>
-        <div class="banner-bottom">
-            <a href="#about"><i class="fa-solid fa-angle-down"></i></a>
-        </div>
-    </div>
-
-    <div class="about" id="about">
-        <div class="about-left">
-            <h3>À propos de moi</h3>
-            <p>Je suis actuellement étudiant en troisième année d'ingénierie informatique à l'EPITA et je suis passionné par les nouvelles technologies. J'y ai acquis de solides compétences en algorithmie et en programmation, notamment en C et en Java. Au cours de mes trois premières années d'études j'ai travaillé sur plusieurs projets informatiques passionnants comme par exemple un shell et un compilateur. En dehors de l'informatique, j'aime le sport, la musique et la cuisine.</p>
-        </div>
-        <div class="about-right">
-            <div class="about-img"><img src="img/dev.png"></div>
-        </div>
-        <div class="about-tel-btn-cv">
-            <a class="download" href="pdf/gauthier-maupas-CV.pdf" target="_blank" download>Télécharger mon CV   <i class="fa-solid fa-download"></i></a>
-        </div>
-    </div>
-
-    <div class="competences" id="competences">
-        <h3>Mes compétences</h3>
-        <div class="competences-content">
-            <div class="langages">
-                <h4>Langages</h4>
-                <div class="langages-content">
-                    <p>C</p>
-                    <p>C++</p>
-                    <p>C#</p>
-                    <p>Java</p>
-                    <p>Bash</p>
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>Python</p>
-                    <p>SQL</p>
-                    <p>JavaScript</p>
-                    <p>Typescript</p>
+        <div class="container-fluid mt-5 pt-4 pb-4 competences-container" id="competences">
+            <div class="container-fluid d-flex align-items-center justify-content-center text-white flex-column">
+                <div class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-in" data-aos-duration="300">
+                    <h3 class="m-0">Mes compétences</h3>
+                    <div class="h-separator mt-2" style="background-color: white;"></div>
                 </div>
-            </div>
-            <div class="outils">
-                <h4>Outils</h4>
-                <div class="outils-content">
-                    <p>Vim</p>
-                    <p>Visual Studio Code</p>
-                    <p>Intellij IDEA</p>
-		    <p>Rider</p>
-                    <p>Git</p>
-                    <p>gdb</p>
-                    <p>Windows</p>
-                    <p>Linux</p>
-		    <p>Docker</p>
-                </div>
-            </div>
-            <div class="langues">
-                <h4>Langues</h4>
-                <p>Anglais : B1</p>
-                <p>Français : Langue maternelle</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="projets" id="projets">
-        <h3>Mes Projets</h3>
-        <div class="projets-content">
-            <div class="projet projet-img-left">
-                <div class="projet-img">
-                    <img src="img/tiger.png">
-                </div>
-                <div class="projet-text">
-                    <h5>Tiger</h5>
-                    <p><b>Type de projet :</b> école - groupe de 4</p>
-                    <p><b>Durée :</b> 7 semaines</p>
-                    <p><b>Période :</b> février - mars 2023</p>
-                    <p><b>Objectif :</b> Créer un compilateur</p>
-                    <p><b>Langages :</b> C++, Bison, Re/Flex</p>
-                    <p><b>Description :</b> Le projet Tiger est un projet de 3ème année à EPITA dont l'objectif est de créer un compilateur de Tiger en utilisant le langage C++. Pour ce projet, EPITA fournit une grande base de code qui doit être modifiée et complétée pour que le compilateur fonctionne. Chaque semaine, de nouvelles fonctionnalités devaient être implémentées. Au total, nous avons ajouté plus de 7 000 lignes de code.</p>
-                </div>
-            </div>
-
-            <div class="projet projet-img-right">
-                <div class="projet-img">
-                    <img src="img/42sh.png">
-                </div>
-                <div class="projet-text">
-                    <h5>42sh</h5>
-                    <p><b>Type de projet :</b> école - groupe de 4</p>
-                    <p><b>Durée :</b> 4 semaines</p>
-                    <p><b>Période :</b> janvier 2023</p>
-                    <p><b>Objectif :</b> Créer un shell posix</p>
-                    <p><b>Langages :</b> C</p>
-                    <p><b>Description :</b> Le projet 42sh est un projet emblématique d'EPITA. Il s'agit d'un projet de développement en langage C où nous avons créé un shell similaire à Bash à partir de zéro. À la fin du projet, nous avons obtenu un shell fonctionnel qui permet à l'utilisateur d'exécuter toutes les commandes connues sous Unix. Nous avons également recodé certains des "builtins" tels que "echo" et "cd".</p>
-                </div>
-            </div>
-
-            <div class="projet projet-img-left">
-                <div class="projet-img">
-                    <img src="img/piscine.jpg">
-                </div>
-                <div class="projet-text">
-                    <h5>Piscine (C - Java - SQL - C++ - JS)</h5>
-                    <p><b>Durée :</b> 2 semaines pour la piscine de C, 1 semaine pour les autres</p>
-                    <p><b>Période :</b> ING1 (2022/2023)</p>
-                    <p><b>Objectif :</b> Apprentissage intensif d'un langage</p>
-                    <p><b>Langages :</b> C, Java, SQL, C++, JS</p>
-                    <p><b>Description :</b> Les piscines sont des ateliers d'une ou deux semaines pendant lesquels nous apprenons un nouveau langage de programmation. Les horaires de ces ateliers sont de 8h à minuit. Nous avons des cours et travaux dirigés le matin et en début d'après-midi pour apprendre les spécificités du langage. Le soir, nous avons des exercices pratiques à valider pour réussir l'atelier. Chaque piscine se termine par un "rush", qui est un projet individuel de 24h ou 48h à réaliser dans le langage que nous venons d'apprendre.</p>
-                </div>
-            </div>
-
-            <div class="projet projet-img-right">
-                <div class="projet-img">
-                    <img src="img/no.png">
-                </div>
-                <div class="projet-text">
-                    <h5>JWS - API REST</h5>
-                    <p><b>Type de projet :</b> école - individuel</p>
-                    <p><b>Durée :</b> 1 semaine</p>
-                    <p><b>Période :</b> décembre 2022</p>
-                    <p><b>Objectif :</b> Créer une API REST</p>
-                    <p><b>Langages / Frameworks :</b> Java / Quarkus, Hibernate</p>
-                    <p><b>Description :</b> JWS est un projet en Java dont l'objectif était de créer le back-end d'un jeu Bomberman en Java. Ce projet a été très formateur, car il nous a permis d'apprendre comment fonctionne une API REST et comment elle est structurée.</p>
-                </div>
-            </div>
-
-            <div class="projet projet-img-left">
-                <div class="projet-img">
-                    <img src="img/no.png">
-                </div>
-                <div class="projet-text">
-                    <h5>Mini projets</h5>
-                    <p><b>Type de projet :</b> école - individuel</p>
-                    <p><b>Durée :</b> 4 semaines - 1 semaine par projet</p>
-                    <p><b>Période :</b> novembre 2022</p>
-                    <p><b>Objectif :</b> Réaliser des projets à court terme</p>
-                    <p><b>Langages :</b> C</p>
-                    <p><b>Description :</b> Après notre piscine de C, nous avons réalisé plusieurs mini-projets pour consolider nos acquis en langage C. Nous avons recodé certaines fonctions de la librairie C, à savoir "printf", ainsi que "malloc/realloc/calloc/free". Le projet "malloc" nous a permis de mieux comprendre la gestion de la mémoire en C. Nous avons également développé un serveur respectant les spécifications HTTP/1.1.</p>
-                </div>
-            </div>
-
-            <div class="projet projet-img-right">
-                <div class="projet-img">
-                    <img src="img/ocr.png">
-                </div>
-                <div class="projet-text">
-                    <h5>OCR - Sudoku Solver</h5>
-                    <p><b>Type de projet :</b> école - groupe de 4</p>
-                    <p><b>Durée :</b> 8 semaine</p>
-                    <p><b>Période :</b> octobre - novembre 2021</p>
-                    <p><b>Objectif :</b> Création d'un OCR pour résoudre des sudoku</p>
-                    <p><b>Langages :</b> C</p>
-		    <!-- <p><b>Rapport :</b> <a href="pdf/Rapport_OCR.pdf" target="_blank" download>Télécharger le rapport du projet</a></p> -->
-                    <p><b>Description :</b> Le projet OCR est le premier grand projet de groupe à l'EPITA. OCR Sudoku Solver est un logiciel qui prend en entrée une photo d'un sudoku, traite l'image pour la rendre exploitable, résout le sudoku et affiche l'image du sudoku avec la grille remplie. Ce projet nous a permis d'apprendre les techniques de traitement d'image, les bases d'un réseau de neurones, ainsi que le développement d'une interface graphique.</p>
-                </div>
-            </div>
-
-            <div class="projet projet-img-left">
-                <div class="projet-img">
-                    <img src="img/zesouk.png">
-                </div>
-                <div class="projet-text">
-                    <h5>Ze Souk</h5>
-                    <p><b>Type de projet :</b> école - groupe de 4</p>
-                    <p><b>Durée :</b> 16 semaines</p>
-                    <p><b>Période :</b> février - juin 2021</p>
-                    <p><b>Objectif :</b> Création d'un jeu 2D</p>
-                    <p><b>Langages / logiciels :</b> C# / Unity</p>
-                    <p><b>Description :</b> Pendant notre deuxième semestre de première année, nous avons eu pour projet de créer un jeu vidéo en groupe de 4 avec Unity. Avec mon équipe, nous avons opté pour la création d'un jeu en 2D, similaire à Smash Bros, avec plusieurs personnages et une carte. Nous avons également inclus un peu de réseau pour permettre le jeu en LAN.</p>
+                <div class="d-flex flex-column mt-4 flex-lg-row flex-xl-row flex-xxl-row">
+                    <div class="col-lg-4 col-xl-4 col-xxl-4 d-flex flex-column justify-content-center align-items-center" data-aos="fade-right" data-aos-duration="1000">
+                        <div>
+                            <h4>Langages</h4>
+                        </div>
+                        <div class="container-fluid d-flex flex-row flex-wrap justify-content-center">
+                            <img class="card-img-top logo" src="img/logo/c.png" alt="C logo" title="C">
+                            <img class="card-img-top logo" src="img/logo/c++.png" alt="c++ logo" title="C++">
+                            <img class="card-img-top logo" src="img/logo/csharp.png" alt="c# logo" title="C#">
+                            <img class="card-img-top logo" src="img/logo/java.png" alt="java logo" title="Java">
+                            <img class="card-img-top logo" src="img/logo/sql.png" alt="sql logo" title="SQL">
+                            <img class="card-img-top logo" src="img/logo/html.png" alt="html logo" title="HTML">
+                            <img class="card-img-top logo" src="img/logo/css.png" alt="css logo" title="CSS">
+                            <img class="card-img-top logo" src="img/logo/js.png" alt="js logo" title="Javascript">
+                            <img class="card-img-top logo" src="img/logo/python.png" alt="python logo" title="Python">
+                            <img class="card-img-top logo" src="img/logo/typescript.png" alt="typescript logo" title="TypeScript">
+                            <img class="card-img-top logo" src="img/logo/bash.png" alt="bash logo" title="Bash">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-4 col-xxl-4 d-flex flex-column justify-content-center align-items-center mt-4" data-aos="zoom-in" data-aos-duration="1000">
+                        <div>
+                            <h4>Framework</h4>
+                        </div>
+                        <div class="container-fluid d-flex flex-row flex-wrap justify-content-center">
+                            <img class="card-img-top logo" src="img/logo/bootstrap.png" alt="Bootstrap logo" title="Bootstrap">
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-xl-4 col-xxl-4 d-flex flex-column justify-content-center align-items-center mt-4" data-aos="fade-left" data-aos-duration="1000">
+                        <div>
+                            <h4>Outils</h4>
+                        </div>
+                        <div class="container-fluid d-flex flex-row flex-wrap justify-content-center">
+                            <img class="card-img-top logo" src="img/logo/vim.png" alt="Vim logo" title="Vim">
+                            <img class="card-img-top logo" src="img/logo/vscode.png" alt="Visual Studio Code logo" title="Visual Studio Code">
+                            <img class="card-img-top logo" src="img/logo/idea.png" alt="IntelliJ IDEA logo" title="IntelliJ IDEA">
+                            <img class="card-img-top logo" src="img/logo/rider.png" alt="Rider logo" title="Rider">
+                            <img class="card-img-top logo" src="img/logo/git.png" alt="Git logo" title="Git">
+                            <img class="card-img-top logo" src="img/logo/gdb.png" alt="GNU Debugger logo" title="GNU Debugger">
+                            <img class="card-img-top logo" src="img/logo/windows.png" alt="Windows logo" title="Windows">
+                            <img class="card-img-top logo" src="img/logo/linux.png" alt="Linux logo" title="Linux">
+                            <img class="card-img-top logo" src="img/logo/docker.png" alt="Docker logo" title="Docker">
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="contact" id="contact">
-        <div class="contact-title">
-            <h3>Contact</h3>
+        <div class="container-fluid mt-5" id="freelance">
+            <div class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-in" data-aos-duration="300">
+                <h3 class="m-0">Freelance</h3>
+                <div class="h-separator mt-2" style="background-color: #34495e;"></div>
+            </div>
+            <div class="container-fluid col-12 d-flex flex-lg-row flex-xl-row flex-xxl-row flex-column">
+                <div class="container col-lg-3 col-xl-3 col-xxl-3 col-12 mt-5" data-aos="flip-right" data-aos-duration="1000">
+                    <h6>Développement d'un site vitrine</h6>
+                    <div class="h-separator" style="height: 1px; width: 50px;"></div>
+                    <p style="text-align: justify;" class="mt-3">    En tant que freelance, je suis le partenaire idéal pour donner vie à votre vision en ligne. Mes connaissances en développement web me permettent de créer des sites vitrines captivants pour refléter parfaitement votre identité et vos objectifs. En utilisant les dernières technologies et en suivant les meilleures pratiques, je transforme vos idées en une expérience web engageante et fonctionnelle.</p>
+                </div>
+                <div class="container col-lg-3 col-xl-3 col-xxl-3 col-12 mt-5" data-aos="flip-up" data-aos-duration="1000">
+                    <h6>Maintenance et update d'un site</h6>
+                    <div class="h-separator" style="height: 1px; width: 50px;"></div>
+                    <p style="text-align: justify;" class="mt-3">    Je possède également les compétences pour effectuer des ajustements sur des sites existants, les optimiser et résoudre tout problème technique que vous pourriez rencontrer. Je suis parfaitement à l'aise pour travailler sur un code déjà en place et le perfectionner selon vos besoins. Mon aptitude à m'adapter à des bases de code existantes est une de mes forces majeures, me permettant d'apporter des améliorations significatives.</p>
+                </div>
+                <div class="container col-lg-3 col-xl-3 col-xxl-3 col-12 mt-5" data-aos="flip-left" data-aos-duration="1000">
+                    <h6>Responsive et animations</h6>
+                    <div class="h-separator" style="height: 1px; width: 50px;"></div>
+                    <p style="text-align: justify;" class="mt-3">    Je suis en mesure de concevoir des sites web responsive, assurant ainsi leur accessibilité sur une variété d'écrans. De plus, je peux adapter votre site existant pour le rendre responsive et introduire des animations pour insuffler davantage de dynamisme à votre plateforme.</p>
+                </div>
+            </div>
+            <div class="container-fluid col-12 d-flex align-items-center justify-content-center flex-column mt-5 text-center" data-aos="zoom-in" data-aos-duration="1000">
+                <h4>Contactez-moi dès aujourd'hui pour discuter de votre projet de développement</h4>
+                <div class="mt-4">
+                    <button class="btn btn-primary me-4" onclick="location.href='#contact'">Contact</button>
+                    <a class="btn btn-primary ms-4" style="background-color: #fc5757; border-color: #fc5757;" href="https://www.malt.fr/profile/gauthiermaupas1?overview" target="_blank">Mon profil Malt</a>
+                </div>
+            </div>
         </div>
-        <div class="contact-content">
-            <p><i class="fa-regular fa-envelope"></i> <a href="mailto:gauthier.maupas@epita.fr">gauthier.maupas@epita.fr</a></p>
-            <p><i class="fa-solid fa-phone"></i> 07 82 59 13 68</p>
-            <p><i class="fa-brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/gauthier-maupas/" target="_blank"> https://www.linkedin.com/in/gauthier-maupas/</a></p>
-        </div>
-    </div>
 
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script> -->
-    <script src="https://kit.fontawesome.com/f958f767fe.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/scroll.js"></script>
-    <script type="text/javascript" src="js/btn-back.js"></script>
-    <script type="text/javascript" src="js/menu-tel.js"></script>
-</body>
+        <div class="container-fluid col-12 project-container mt-5 pt-5 pb-5" id="projects">
+            <div class="d-flex justify-content-center align-items-center flex-column" data-aos="fade-in" data-aos-duration="300">
+                <h3 class="m-0">Mes projets</h3>
+                <div class="h-separator mt-2" style="background-color: #fff;"></div>
+            </div>
+            <div class="container-fluid d-flex flex-row mt-5 flex-wrap justify-content-center">
+                <div class="card m-3 my-card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="1000" data-aos-anchor="#projects">
+                    <img src="img/projets/ping.png" class="card-img-top img-projet" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between mb-3">
+                                <h5 class="card-title m-0">PING</h5>
+                                <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            </div>
+                            <p class="card-text mb-3">Développement d'un IDE, le front-end a été fait en html, css, js et le back-end en java (API)</p>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pingModal">Plus d'info</a>
+                    </div>
+                </div>
+                <div class="card m-3 my-card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100" data-aos-anchor="#projects">
+                    <img src="img/projets/tiger.png" class="card-img-top img-projet" alt="...">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between mb-3">
+                                <h5 class="card-title m-0">Tiger</h5>
+                                <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            </div>
+                            <p class="card-text mb-3">Le projet Tiger est un projet de 3ème année à EPITA dont l'objectif est de créer un compilateur de Tiger en utilisant le langage C++.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tigerModal">Plus d'info</a>
+                    </div>
+                </div>
+                <div class="card m-3 my-card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="200" data-aos-anchor="#projects">
+                    <div class="card-img-top img-projet">
+                        <img src="img/projets/42sh.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between mb-3">
+                                <h5 class="card-title m-0">42sh</h5>
+                                <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            </div>
+                            <p class="card-text mb-3">Le projet 42sh est un projet emblématique de l'EPITA. Il s'agit d'un projet de développement en langage C où nous avons créé un shell similaire à Bash.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#42shModal">Plus d'info</a>
+                    </div>
+                </div>
+                <div class="card m-3 my-card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="300" data-aos-anchor="#projects">
+                    <div class="card-img-top img-projet">
+                        <img src="img/projets/no.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between mb-3">
+                                <h5 class="card-title m-0">Java Web Service</h5>
+                                <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            </div>
+                            <p class="card-text mb-3">JWS est un projet en Java dont l'objectif était de créer le back-end (REST API) d'un jeu Bomberman en Java.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#jwsModal">Plus d'info</a>
+                    </div>
+                </div>
+                <div class="card m-3 my-card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="400" data-aos-anchor="#projects">
+                    <div class="card-img-top img-projet">
+                        <img src="img/projets/ocr_ui.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between mb-3">
+                                <h5 class="card-title m-0">Sudoku Solver</h5>
+                                <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            </div>
+                            <p class="card-text mb-3">Le projet Sudoku Solver porte sur la création d'un OCR capable de résoudre un sudoku et sur la création de l'interface graphique de notre solver.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sudokuModal">Plus d'info</a>
+                    </div>
+                </div>
+                <div class="card m-3 my-card" style="width: 18rem;" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="500" data-aos-anchor="#projects">
+                    <div class="card-img-top img-projet">
+                        <img src="img/projets/zesouk.png" class="img-fluid" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <div>
+                            <div class="d-flex flex-row justify-content-between mb-3">
+                                <h5 class="card-title m-0">Ze Souk</h5>
+                                <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            </div>
+                            <p class="card-text mb-3">Développement d'un remake de smash bros en C# avec Unity.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#zeSoukModal">Plus d'info</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid" id="contact">
+            <div class="d-flex justify-content-center align-items-center flex-column mt-5 mb-5" data-aos="fade-in" data-aos-duration="300">
+                <h3 class="m-0">Contact</h3>
+                <div class="h-separator mt-2" style="background-color: #34495e;"></div>
+            </div>
+            <div class="container col-lg-4 col-xl-4 col-xxl-4 mb-5" data-aos="zoom-in" data-aos-duration="1000">
+                <form class="my-form">
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label">Nom - Prénom</label>
+                        <input type="text" class="form-control" id="inputName" placeholder="John Doe" required>
+                        <div class="invalid-feedback">
+                            Veuillez renseigner un nom.
+                        </div>                    
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="inputEmail" placeholder="john.doe@example.fr" required>
+                        <div class="invalid-feedback">
+                            Veuillez renseigner un email.
+                        </div> 
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputTel" class="form-label">Téléphone (optionel)</label>
+                        <input type="tel" class="form-control" id="inputTel">
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputMsg" class="form-label">Message</label>
+                        <textarea class="form-control" id="inputMsg" placeholder="Votre message" rows="6" required></textarea>
+                        <div class="invalid-feedback">
+                            Veuillez renseigner un message.
+                        </div> 
+                    </div>
+                    <div class="container-fluid d-flex justify-content-center align-items-center">
+                        <button type="submit" class="btn btn-primary">Envoyer</button>                    
+                    </div>
+                </form>
+                <div 
+                    class="alert"
+                    id="success-alert"
+                    role="alert"
+                    style="display: none; background-color: #d4edda; border-color: #c3e6cb; color: #155724; right: 20px; bottom: 20px; position: fixed;">
+                    <i class="fa-regular fa-circle-check"></i>  Votre message a été envoyé avec succès.
+                </div>
+                <div 
+                    class="alert"
+                    id="error-alert"
+                    role="alert"
+                    style="display: none; background-color: #f8d7da; border-color: #f5c6cb; color: #721c24; right: 20px; bottom: 20px; position: fixed;">
+                    <i class="fa-regular fa-circle-xmark"></i>  Une erreur est survenue lors de l'envoi du formulaire.
+                </div>
+            </div>
+            <div class="container-fluid text-center mb-5" data-aos="zoom-in" data-aos-duration="400">
+                <h5>Vous pouvez également me contacter par mail :</h5>
+                <a href="mailto:gauthier.maupas@gmail.com">gauthier.maupas@gmail.com</a>
+            </div>
+            <div class="container-fluid text-center mb-5" data-aos="zoom-in" data-aos-duration="400">
+                <a href="https://www.linkedin.com/in/gauthier-maupas/" title="LinkedIn" target="_blank"><img style="width: 68px;" src="img/linkedin.png" alt="logo linkedin" class="rounded-circle"></a>
+                <span class="col-2"></span>
+                <a href="https://github.com/gauthier-mps" title="Github" target="_blank"><img style="width: 50px;" src="img/github.png" alt="logo github" class="rounded-circle"></a>
+                <span class="col-2"></span>
+                <a href="https://www.malt.fr/profile/gauthiermaupas1?overview" title="Malt" target="_blank"><img style="width: 60px;" src="img/malt.png" alt="logo malt" class="rounded-circle"></a>
+            </div>
+        </div>
+
+        <div class="container-fluid col-12 text-center text-white" style="background-color: #34495e;">
+            <p class="m-0 small">© 2023 Gauthier Maupas. Tous droits réservés.</p>
+        </div>
+
+
+
+
+        <!-- MODAL -->
+
+        <!-- PING Modal -->
+        <div class="modal fade" id="pingModal" tabindex="-1" aria-labelledby="pingModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">PING</h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Durée :</b> 3 semaines</p>
+                            <p><b>Objectif :</b> Créer un IDE</p>
+                            <p><b>Langages :</b> HTML, CSS, Javascript, Java</p>
+                            <p></p>
+                            <p>   Le projet PING est un projet en groupe de 5 ou nous devions développer un IDE (un environnement de développement) pour un client. Nous avons développé le backend de notre IDE en Java (langage imposé) et nous avons développé le front-end avec électron en html, css et javascript. Pour connecter notre back-end avec le front-end nous avons fait une API en Java.</p>
+                        </div>
+                        <div class="container-fluid col-12">
+                            <img src="img/projets/ping.png" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tiger Modal -->
+        <div class="modal fade" id="tigerModal" tabindex="-1" aria-labelledby="tigerModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Tiger</h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Durée :</b> 7 semaines</p>
+                            <p><b>Objectif :</b> Créer un compilateur</p>
+                            <p><b>Langages :</b> C++, Bison, Re/Flex</p>
+                            <p></p>
+                            <p>   Le projet Tiger est un projet, en groupe de 4, de 3ème année à EPITA dont l'objectif est de créer un compilateur de Tiger en utilisant le langage C++. Pour ce projet, EPITA fournit une grande base de code qui doit être modifiée et complétée pour que le compilateur fonctionne. Chaque semaine, de nouvelles fonctionnalités devaient être implémentées. Au total, nous avons ajouté plus de 7 000 lignes de code.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 42sh Modal -->
+        <div class="modal fade" id="42shModal" tabindex="-1" aria-labelledby="42shModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">42sh</h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Durée :</b> 4 semaines</p>
+                            <p><b>Objectif :</b> Créer un shell POSIX</p>
+                            <p><b>Langages :</b> C</p>
+                            <p></p>
+                            <p>   Le projet 42sh est un projet emblématique d'EPITA en groupe de 4. Il s'agit d'un projet de développement en langage C où nous avons créé un shell similaire à Bash à partir de zéro. À la fin du projet, nous avons obtenu un shell fonctionnel qui permet à l'utilisateur d'exécuter toutes les commandes connues sous Unix. Nous avons également recodé certains des "builtins" tels que "echo" et "cd".</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- jws Modal -->
+        <div class="modal fade" id="jwsModal" tabindex="-1" aria-labelledby="jwsModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">JWS (Java Web Services)</h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Durée :</b> 1 semaines</p>
+                            <p><b>Objectif :</b> Créer une API REST</p>
+                            <p><b>Langages / Frameworks :</b> Java / Quarkus, Hibernate</p>
+                            <p></p>
+                            <p>   JWS est un projet en Java dont l'objectif était de créer le back-end d'un jeu Bomberman en Java. Ce projet a été très formateur, car il nous a permis d'apprendre comment fonctionne une API REST et comment elle est structurée.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- sudoku solver Modal -->
+        <div class="modal fade" id="sudokuModal" tabindex="-1" aria-labelledby="sudokuModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">Sudoku Solver</h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Durée :</b> 8 semaines</p>
+                            <p><b>Objectif :</b> Création d'un OCR pour résoudre des sudoku</p>
+                            <p><b>Langages :</b> C</p>
+                            <p></p>
+                            <p>   Le projet OCR est le premier grand projet de groupe à l'EPITA. OCR Sudoku Solver est un logiciel qui prend en entrée une photo d'un sudoku, traite l'image pour la rendre exploitable, résout le sudoku et affiche l'image du sudoku avec la grille remplie. Ce projet nous a permis d'apprendre les techniques de traitement d'image, les bases d'un réseau de neurones, ainsi que le développement d'une interface graphique.</p>
+                        </div>
+                        <div class="container-fluid col-12">
+                            <img src="img/projets/ocr_ui.png" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- zesouk Modal -->
+        <div class="modal fade" id="zeSoukModal" tabindex="-1" aria-labelledby="zeSoukModal" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-xl modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-between">
+                        <h1 class="modal-title fs-5" id="exampleModalLabel">ZeSouk</h1>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <span class="badge rounded-pill text-bg-secondary">Projet EPITA</span>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <p><b>Durée :</b> 16 semaines</p>
+                            <p><b>Objectif :</b> Création d'un jeu 2D</p>
+                            <p><b>Langages :</b> C# / Unity</p>
+                            <p></p>
+                            <p>   Pendant notre deuxième semestre de première année, nous avons eu pour projet de créer un jeu vidéo en groupe de 4 avec Unity. Avec mon équipe, nous avons opté pour la création d'un jeu en 2D, similaire à Smash Bros, avec plusieurs personnages et une carte. Nous avons également inclus un peu de réseau pour permettre le jeu en LAN.</p>
+                        </div>
+                        <div class="container-fluid col-12">
+                            <img src="img/projets/zesouk.png" style="width: 100%; height: auto;">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+
+
+
+
+
+
+
+        <script src="https://kit.fontawesome.com/f958f767fe.js" crossorigin="anonymous"></script>
+        <script src="js/typewriter.js"></script>
+        <script src="js/form.js"></script>
+        <script src="js/btn-back.js"></script>
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({once: true});
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
 </html>

@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
+
+.shadow-custom {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.font-custom-brand {
+    font-family: 'Tangerine', cursive;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 1px;
+    border-radius: 4px;
+    background-color: #212121;
+    margin-top: 25px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+  
+.nav-link:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+.container-banner {
+    height: 100vh;
+}
+
+.photo-circle {
+    max-width: 400px;
+}
+
+.h-separator {
+    height: 2px;
+    width: 100px;
+    background-color: #333;
+}
+
+.v-separator {
+    height: 200px;
+    width: 2px;
+    margin: 0px 10px 0px 10px;
+    background-color: #333;
+}
+
+.angle-down {
+    font-size: 25pt;
+    text-decoration: none;
+    color: black;
+}
+
+.bounce-animation:hover {
+    animation: bounce-animation 0.7s infinite;
+}
+
+@keyframes bounce-animation {
+    0%, 50%, 100% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    75% {
+        transform: translateY(-7px);
+    }
+}
+
+.about-title {
+    height: 15px;
+    background-color: #34495e;
+    color: white;
+}
+
+.card-container {
+    height: auto;
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.competences-container {
+    background-color: #34495e;
+
+}
+
+.logo {
+    height: 100px;
+    width: auto;
+    padding: 10px;
+}
+
+.project-container {
+    background-color: #34495e;
+    color: #fff;
+}
+
+.img-projet {
+    max-width: 18rem;
+    max-height: 15rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.img-projet {
+    width: 100%;
+    height: 100%;
+}
+
+.my-card {
+    transition: .12s;
+}
+
+.my-card:hover {
+    scale: 1.02;
+}
+
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background-color:  #1f618d;
+    color: #fff;
+    z-index: 999;
+}
+
+@media only screen and (max-width: 800px) {
+    .angle-down {
+        display: none;
+    }
+
+    .container-banner {
+        height: auto;
+        margin-top: 100px;
+    }
+
+    .v-separator {
+        height: 2px;
+        width: 100px;
+        background-color: #333;
+    }
+
+    .logo {
+        height: 75px;
+    }
+}

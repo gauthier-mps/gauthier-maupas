@@ -1,20 +1,22 @@
-const btn = document.querySelector('.btn-back');
+let mybutton = document.getElementById("btn-back-to-top");
 
-btn.addEventListener('click', () => {
+window.onscroll = function () {
+  scrollFunction();
+};
 
-	window.scrollTo({
-		top: 0,
-		left: 0,
-		behavior: "smooth"
-	})
+function scrollFunction() {
+  if (
+    document.body.scrollTop > 20 ||
+    document.documentElement.scrollTop > 20
+  ) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+mybutton.addEventListener("click", backToTop);
 
-})
-
-
-$(window).scroll(function(){
-	posScroll = $(document).scrollTop();
-	if(posScroll >=200) 
-		$('.btn-back').fadeIn(600);
-	else
-		$('.btn-back').fadeOut(600);
-});
+function backToTop() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
