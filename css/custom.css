@@ -133,6 +133,88 @@
     z-index: 999;
 }
 
+.recommandation-container {
+    background-color: #34495e;
+    transition: height 5s ease;
+}
+
+
+
+
+.main-timeline {
+    position: relative;
+    max-width: 50%;
+    margin: 0 auto;
+}
+  
+.main-timeline::after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    background-color: #34495e;
+    top: 0;
+    bottom: 0;
+    left: auto;
+    margin-left: -3px;
+}
+  
+.timeline-element {
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+}
+  
+.timeline-element::after {
+    content: "";
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    right: 1px;
+    border: 4px solid #34495e;
+    background-color: white;
+    top: 18px;
+    border-radius: 50%;
+    z-index: 1;
+    transition: background-color .2s ease;
+}
+
+.timeline-element:hover::after {
+    background-color: #34495e;
+}
+  
+.right {
+    padding: 0px 0px 20px 40px;
+    left: auto;
+}
+  
+.right::before {
+    content: " ";
+    position: absolute;
+    top: 18px;
+    z-index: 1;
+    left: 31px;
+    border: medium solid #34495e;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #34495e transparent transparent;
+}
+  
+.right::after {
+    left: -10px;
+}
+  
+@media (max-width: 991px) {
+    .main-timeline {
+        max-width: 100%;
+    }
+}
+
+.card {
+    border-color: #34495e;
+    cursor: default;
+}
+
+
+
 @media only screen and (max-width: 800px) {
     .angle-down {
         display: none;
@@ -152,4 +234,7 @@
     .logo {
         height: 75px;
     }
+}.recommandation-container {
+    background-color: #34495e;
+    transition: height 5s ease;
 }
